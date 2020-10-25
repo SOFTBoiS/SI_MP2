@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="order_flight_bus_rules" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+  <decision id="amountOfPassengersRule" name="busrules">
+    <decisionTable id="DecisionTable_0akaoys">
+      <input id="Input_1" label="AmountOfPassengers" biodi:width="192" camunda:inputVariable="AmountOfPassengers">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Approved" name="Approved" typeRef="boolean" />
+      <rule id="DecisionRule_03vnrob">
+        <inputEntry id="UnaryTests_09yf4o0">
+          <text>&gt; 9</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0upsz3m">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15w5p0j">
+        <inputEntry id="UnaryTests_12yv4pp">
+          <text>&lt;= 9</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gbx5c1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="amountOfPassengersRule">
+        <dc:Bounds height="80" width="180" x="160" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
